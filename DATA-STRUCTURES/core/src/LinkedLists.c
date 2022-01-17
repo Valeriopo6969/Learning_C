@@ -67,7 +67,7 @@ List_Node list_remove_item(List_Head head, List_Node item)
             }
             previous_node->next = current_node->next;
             current_node->next = NULL;
-            return previous_node;
+            return current_node;
         }
 
         previous_node = current_node;
@@ -77,9 +77,9 @@ List_Node list_remove_item(List_Head head, List_Node item)
     return NULL;
 }
 
-List_Head list_reverse(List_Head head)
+void list_reverse(List_Head head)
 {
-    if(!*head) return NULL;
+    if(!*head) return;
 
     List_Node current_node = *head;
     List_Node previous_node = NULL;
@@ -94,7 +94,7 @@ List_Head list_reverse(List_Head head)
     }
     *head = previous_node;
 
-    return head;
+   
 }
 
 List_Node list_get_item(List_Head head, List_Node item)
